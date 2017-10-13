@@ -1,11 +1,9 @@
-namespace ZenithDataLib.Migrations.Society
+namespace ZenithWebsite.Migrations.Society
 {
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using ZenithDataLib.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ZenithDataLib.Models.ApplicationDbContext>
     {
@@ -30,7 +28,5 @@ namespace ZenithDataLib.Migrations.Society
             //    );
             //
         }
-
-
     }
 }
