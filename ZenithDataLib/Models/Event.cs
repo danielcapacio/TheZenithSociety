@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ZenithDataLib.Models
 {
-    class Event
+    public class Event
     {
         // EventId
         // Event from date and time
@@ -32,9 +32,9 @@ namespace ZenithDataLib.Models
         [Display(Name = "Entered By")]
         public string EnteredBy { get; set; }
 
+        // FK
         [Required]
         [Display(Name = "Activity Category")]
-        [ForeignKey("Activity")]
         public int ActivityCategory { get; set; }
 
         [Required]

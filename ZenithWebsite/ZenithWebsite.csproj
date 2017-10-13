@@ -195,6 +195,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Society\201710132326235_FirstIdentity.cs" />
+    <Compile Include="Migrations\Society\201710132326235_FirstIdentity.Designer.cs">
+      <DependentUpon>201710132326235_FirstIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Society\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -202,10 +206,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ZenithSociety.mdf" />
-    <Content Include="App_Data\ZenithSociety_log.ldf">
-      <DependentUpon>ZenithSociety.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="docs\migrations.txt" />
@@ -282,6 +282,14 @@
       <Project>{1b56fbfc-255b-4186-9e28-fe575a06c467}</Project>
       <Name>ZenithDataLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\Society\201710132326235_FirstIdentity.resx">
+      <DependentUpon>201710132326235_FirstIdentity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

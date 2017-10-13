@@ -29,5 +29,8 @@ namespace ZenithDataLib.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Activity> Activities { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

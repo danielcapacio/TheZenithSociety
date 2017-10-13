@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZenithDataLib.Models
 {
-    class Activity
+    public class Activity
     {
         // ActivityCategoryId - primary key
         // ActivityDescription

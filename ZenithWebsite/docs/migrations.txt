@@ -1,5 +1,5 @@
 ﻿Enable-Migrations -ContextProjectName ZenithDataLib -StartUpProjectName ZenithDataLib -ContextTypeName ApplicationDbContext -ProjectName ZenithWebSite -MigrationsDirectory Migrations\Society
 
-add-migration -ConfigurationTypeName ZenithSociety.Migrations.Society.Configuration "First Identity"
+add-migration -ConfigurationTypeName ZenithWebsite.Migrations.Society.Configuration "FirstIdentity"
 
-update-database -ConfigurationTypeName ZenithSociety.Migrations.Society.Configuration
+update-database -ConfigurationTypeName ZenithWebsite.Migrations.Society.Configuration
