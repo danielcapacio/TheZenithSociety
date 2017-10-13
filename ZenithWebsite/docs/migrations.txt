@@ -10,6 +10,17 @@ update-database -ConfigurationTypeName EntityCodeFirst.Migrations.Hockey.Configu
 
 enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Society
 
-add-migration -ConfigurationTypeName ZenithWebsite.Migrations.Identity.Configuration "First Identity"
+add-migration -ConfigurationTypeName ZenithWebsite.Migrations.Society.Configuration "First Identity"
 
-update-database -ConfigurationTypeName ZenithWebsite.Migrations.Identity.Configuration
+update-database -ConfigurationTypeName ZenithWebsite.Migrations.Society.Configuration
+
+
+
+
+
+
+Enable-Migrations -ContextProjectName ZenithDataLib -StartUpProjectName ZenithDataLib -ContextTypeName ApplicationDbContext -ProjectName ZenithWebSite -MigrationsDirectory Migrations\ZenithSocietyMigrations
+
+add-migration -ConfigurationTypeName ZenithSociety.Migrations.ZenithSocietyMigrations.Configuration "Changed"
+
+update-database -ConfigurationTypeName ZenithSociety.Migrations.ZenithSocietyMigrations.Configuration

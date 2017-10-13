@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ZenithWebsite.Models;
+using ZenithDataLib.Models;
 
-namespace ZenithWebsite.Controllers
+namespace ZenithDataLib.Controllers
 {
     [Authorize]
     public class AccountController : Controller

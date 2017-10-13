@@ -1,11 +1,13 @@
-namespace ZenithWebsite.Migrations.Society
+namespace ZenithDataLib.Migrations.Society
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using ZenithDataLib.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ZenithWebsite.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ZenithDataLib.Models.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +15,7 @@ namespace ZenithWebsite.Migrations.Society
             MigrationsDirectory = @"Migrations\Society";
         }
 
-        protected override void Seed(ZenithWebsite.Models.ApplicationDbContext context)
+        protected override void Seed(ZenithDataLib.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -28,5 +30,7 @@ namespace ZenithWebsite.Migrations.Society
             //    );
             //
         }
+
+
     }
 }

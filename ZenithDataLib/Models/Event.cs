@@ -33,8 +33,8 @@ namespace ZenithDataLib.Models
         public string EnteredBy { get; set; }
 
         [Required]
-        [ForeignKey("Activity")]
         [Display(Name = "Activity Category")]
+        [ForeignKey("Activity")]
         public int ActivityCategory { get; set; }
 
         [Required]
