@@ -2,14 +2,14 @@
 
 enable-migrations -ContextTypeName HockeyContext -MigrationsDirectory Migrations\Hockey
 
-add-migration -ConfigurationTypeName EntityCodeFirst.Migrations.Hockey.Configuration "AddedCountry"
+add-migration -ConfigurationTypeName EntityCodeFirst.Migrations.Hockey.Configuration "InitialCreate"
 
 update-database -ConfigurationTypeName EntityCodeFirst.Migrations.Hockey.Configuration
 
 **************************** ApplicationDbContext ************************
 
-enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Society
 
-add-migration -ConfigurationTypeName EntityCodeFirst.Migrations.Identity.Configuration "First Identity"
+add-migration -ConfigurationTypeName ZenithWebsite.Migrations.Identity.Configuration "First Identity"
 
-update-database -ConfigurationTypeName EntityCodeFirst.Migrations.Identity.Configuration
+update-database -ConfigurationTypeName ZenithWebsite.Migrations.Identity.Configuration
