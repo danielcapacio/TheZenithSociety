@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ZenithDataLib
+namespace ZenithWebsite
 {
     public class BundleConfig
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ZenithDataLib.Models
+namespace ZenithWebsite.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -6,9 +6,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ZenithDataLib.Models;
+using ZenithWebsite.Models;
+using ZenithDataLib;
 
-namespace ZenithDataLib.Controllers
+namespace ZenithWebsite.Controllers
 {
     [Authorize]
     public class ManageController : Controller

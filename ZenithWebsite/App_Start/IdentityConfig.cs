@@ -12,7 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ZenithDataLib.Models;
 
-namespace ZenithDataLib
+namespace ZenithWebsite
 {
     public class EmailService : IIdentityMessageService
     {
@@ -85,6 +85,16 @@ namespace ZenithDataLib
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        internal Task CreateAsync(Models.ApplicationUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Task CreateAsync(Models.ApplicationUser user, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 
