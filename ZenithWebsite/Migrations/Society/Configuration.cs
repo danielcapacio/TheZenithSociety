@@ -17,22 +17,87 @@ namespace ZenithWebsite.Migrations.Society
 
         protected override void Seed(ZenithDataLib.Models.ApplicationDbContext context)
         {
-            // *************************
-            // Activities
-            // *************************
+            context.Activities.AddOrUpdate(a => a.ActivityCategoryId, getActivities());
+            context.Events.AddOrUpdate(b => b.EventId, getEvents());
+            context.SaveChanges();
+        }
+
+        // *************************
+        // Activities
+        // *************************
+        public Activity[] getActivities()
+        {
             List<Activity> activities = new List<Activity>
             {
                 new Activity()
                 {
                     ActivityDescription = "Senior's Golf Tournament",
                     CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Leadership General Assembly Meeting",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth Bowling Tournament",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Young ladies cooking lessons",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth craft lessons",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth choir practice",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Pancake Breakfast",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Swimming Lessons for the youth",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Swimming Exercise for parents",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Bingo Tournament",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "BBQ Lunch",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Garage Sale",
+                    CreationDate = new DateTime(2017,10,17,8,00,00)
                 }
             };
-            context.Activities.AddOrUpdate(a => a.ActivityCategoryId, activities.ToArray());
+            return activities.ToArray();
+        }
 
-            // *************************
-            // Events
-            // *************************
+        // *************************
+        // Events
+        // *************************
+        public Event[] getEvents()
+        {
             List<Event> events = new List<Event>
             {
                 new Event()
@@ -43,10 +108,117 @@ namespace ZenithWebsite.Migrations.Society
                     ActivityCategory = 1,
                     CreationDate = new DateTime(2017,10,17,8,00,00),
                     IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,18,8,30,0),
+                    EndDate = new DateTime(2017,10,18,10,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 2,
+                    CreationDate = new DateTime(2017,10,18,8,00,00),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,20,5,30,0),
+                    EndDate = new DateTime(2017,10,20,7,15,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 3,
+                    CreationDate = new DateTime(2017,10,20,5,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,20,7,00,0),
+                    EndDate = new DateTime(2017,10,20,8,00,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 4,
+                    CreationDate = new DateTime(2017,10,20,7,00,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,21,8,30,0),
+                    EndDate = new DateTime(2017,10,21,10,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 5,
+                    CreationDate = new DateTime(2017,10,21,8,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,21,10,30,0),
+                    EndDate = new DateTime(2017,10,21,12,00,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 6,
+                    CreationDate = new DateTime(2017,10,21,10,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,21,12,00,0),
+                    EndDate = new DateTime(2017,10,21,13,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 7,
+                    CreationDate = new DateTime(2017,10,21,12,00,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,7,30,0),
+                    EndDate = new DateTime(2017,10,22,8,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 8,
+                    CreationDate = new DateTime(2017,10,22,7,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,8,30,0),
+                    EndDate = new DateTime(2017,10,22,10,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 9,
+                    CreationDate = new DateTime(2017,10,22,8,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,8,30,0),
+                    EndDate = new DateTime(2017,10,22,10,30,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 10,
+                    CreationDate = new DateTime(2017,10,22,8,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,10,30,0),
+                    EndDate = new DateTime(2017,10,22,12,00,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 11,
+                    CreationDate = new DateTime(2017,10,22,8,30,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,12,00,0),
+                    EndDate = new DateTime(2017,10,22,13,00,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 12,
+                    CreationDate = new DateTime(2017,10,22,12,00,0),
+                    IsActive = true
+                },
+                new Event()
+                {
+                    StartDate = new DateTime(2017,10,22,13,00,0),
+                    EndDate = new DateTime(2017,10,22,16,00,0),
+                    EnteredBy = "a",
+                    ActivityCategory = 13,
+                    CreationDate = new DateTime(2017,10,22,13,00,0),
+                    IsActive = true
                 }
             };
-            context.Events.AddOrUpdate(b => b.EventId, events.ToArray());
-            context.SaveChanges();
+            return events.ToArray();
         }
     }
 }
