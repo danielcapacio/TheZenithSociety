@@ -15,6 +15,7 @@ namespace ZenithDataLib.Models
 
         // PK
         [Key]
+        [Display(Name = "Activity")]
         public int ActivityCategoryId { get; set; }
 
         [Required]

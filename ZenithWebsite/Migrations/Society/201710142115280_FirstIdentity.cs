@@ -25,9 +25,9 @@ namespace ZenithWebsite.Migrations.Society
                         StartDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
                         EnteredBy = c.String(nullable: false),
-                        ActivityCategory = c.Int(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         IsActive = c.Boolean(nullable: false),
+                        ActivityCategory = c.Int(nullable: false),
                         Activity_ActivityCategoryId = c.Int(),
                     })
                 .PrimaryKey(t => t.EventId)

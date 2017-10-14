@@ -32,12 +32,6 @@ namespace ZenithDataLib.Models
         [Display(Name = "Entered By")]
         public string EnteredBy { get; set; }
 
-        // FK referencing Activity
-        [Required]
-        [ForeignKey("Activity")]
-        [Display(Name = "Activity Category")]
-        public int ActivityCategoryId { get; set; }
-
         [Required]
         [Display(Name = "Creation Date")]
         public DateTime CreationDate { get; set; }
@@ -45,7 +39,11 @@ namespace ZenithDataLib.Models
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
 
-        [Display(Name = "Activity")]
+        // FK
+        [Display(Name = "Activity Category")]
+        public int ActivityCategory { get; set; }
+
+        [ForeignKey("ActivityCategory")]
         public Activity Activity;
     }
 }

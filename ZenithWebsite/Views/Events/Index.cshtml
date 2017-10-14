@@ -21,13 +21,13 @@
             @Html.DisplayNameFor(model => model.EnteredBy)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ActivityCategory)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.CreationDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityCategory)
         </th>
         <th></th>
     </tr>
@@ -44,13 +44,13 @@
             @Html.DisplayFor(modelItem => item.EnteredBy)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ActivityCategory)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CreationDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityCategory)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
