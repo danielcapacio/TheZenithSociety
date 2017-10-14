@@ -13,6 +13,7 @@ namespace ZenithDataLib.Models
         // ActivityDescription
         // CreationDate
 
+        // PK
         [Key]
         public int ActivityCategoryId { get; set; }
 
