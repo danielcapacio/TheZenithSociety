@@ -22,10 +22,9 @@
     <!-- loop through Days and Events passed as WeeklyInfo from HomeController -->
     @foreach (var day in Model)
     {
-        DateTime date = day.Day;
         <tr>
             <th colspan="2" class="text-center label-success">
-                @date.ToLongDateString()
+                @day.Day.ToLongDateString()
             </th>
         </tr>
         <tr class="text-center label-default">
@@ -34,14 +33,15 @@
         </tr>
         foreach (var ev in day.Events)
         {
-            DateTime startTimeRaw = DateTime.Parse(ev.StartDate.ToString());
-            DateTime endTimeRaw = DateTime.Parse(ev.EndDate.ToString());
+            // format this
+            DateTime startTimeActual = DateTime.Parse(ev.StartDate.ToString());
+            DateTime endTimeActual = DateTime.Parse(ev.EndDate.ToString());
 
-            string startTime = startTimeRaw.ToString("hh:mm:tt");
-            string endTime = endTimeRaw.ToString("hh:mm:tt");
+            string startTimeFormatted = startTimeActual.ToString("hh:mm:tt");
+            string endTimeFormatted = endTimeActual.ToString("hh:mm:tt");
             string description = ev.ActivityDescription;
             <tr>
-                <td>@startTime - @endTime</td>
+                <td>@startTimeFormatted - @endTimeFormatted</td>
                 <td>@description</td>
             </tr>
         }
