@@ -49,6 +49,9 @@ namespace ZenithWebsite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ActivityCategoryId,ActivityDescription,CreationDate")] Activity activity)
         {
+            // For logging & auditing purposes, Username and CreationDate will be saved with every event.
+            activity.CreationDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 db.Activities.Add(activity);
