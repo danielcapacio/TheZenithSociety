@@ -27,12 +27,11 @@ namespace ZenithWebsite.Migrations.Society
                         EnteredBy = c.String(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         IsActive = c.Boolean(nullable: false),
-                        ActivityCategory = c.Int(nullable: false),
-                        Activity_ActivityCategoryId = c.Int(),
+                        ActivityCategoryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EventId)
-                .ForeignKey("dbo.Activities", t => t.Activity_ActivityCategoryId)
-                .Index(t => t.Activity_ActivityCategoryId);
+                .ForeignKey("dbo.Activities", t => t.ActivityCategoryId, cascadeDelete: true)
+                .Index(t => t.ActivityCategoryId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -112,14 +111,14 @@ namespace ZenithWebsite.Migrations.Society
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Events", "Activity_ActivityCategoryId", "dbo.Activities");
+            DropForeignKey("dbo.Events", "ActivityCategoryId", "dbo.Activities");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.Events", new[] { "Activity_ActivityCategoryId" });
+            DropIndex("dbo.Events", new[] { "ActivityCategoryId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");

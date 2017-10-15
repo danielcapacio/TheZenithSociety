@@ -64,7 +64,7 @@ namespace ZenithWebsite.Migrations.Society
                     userManager.AddToRole(userManager.FindByEmail(user.Email).Id, "Admin");
                 }
             }
-            if (userManager.FindByEmail("g@g.g") == null)
+            if (userManager.FindByEmail("m@m.m") == null)
             {
                 var user = new ApplicationUser { Email = "m@m.m", UserName = "m" };
                 var result = userManager.Create(user, "P@$$w0rd");
@@ -163,7 +163,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,17,8,30,0),
                     EndDate = new DateTime(2017,10,17,10,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 1)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,17,8,00,00),
@@ -174,7 +174,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,18,8,30,0),
                     EndDate = new DateTime(2017,10,18,10,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 2)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,18,8,00,00),
@@ -185,7 +185,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,20,5,30,0),
                     EndDate = new DateTime(2017,10,20,7,15,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 3)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,20,5,30,0),
@@ -196,7 +196,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,20,7,00,0),
                     EndDate = new DateTime(2017,10,20,8,00,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 4)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,20,7,00,0),
@@ -207,7 +207,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,21,8,30,0),
                     EndDate = new DateTime(2017,10,21,10,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 5)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,21,8,30,0),
@@ -218,7 +218,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,21,10,30,0),
                     EndDate = new DateTime(2017,10,21,12,00,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 6)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,21,10,30,0),
@@ -229,7 +229,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,21,12,00,0),
                     EndDate = new DateTime(2017,10,21,13,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 7)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,21,12,00,0),
@@ -240,7 +240,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,7,30,0),
                     EndDate = new DateTime(2017,10,22,8,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 8)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,7,30,0),
@@ -251,7 +251,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,8,30,0),
                     EndDate = new DateTime(2017,10,22,10,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 9)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,8,30,0),
@@ -262,7 +262,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,8,30,0),
                     EndDate = new DateTime(2017,10,22,10,30,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 10)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,8,30,0),
@@ -273,7 +273,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,10,30,0),
                     EndDate = new DateTime(2017,10,22,12,00,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 11)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,8,30,0),
@@ -284,7 +284,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,12,00,0),
                     EndDate = new DateTime(2017,10,22,13,00,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 12)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,12,00,0),
@@ -295,7 +295,7 @@ namespace ZenithWebsite.Migrations.Society
                     StartDate = new DateTime(2017,10,22,13,00,0),
                     EndDate = new DateTime(2017,10,22,16,00,0),
                     EnteredBy = "a",
-                    ActivityCategory = context.Activities
+                    ActivityCategoryId = context.Activities
                                     .FirstOrDefault(a => a.ActivityCategoryId == 13)
                                     .ActivityCategoryId,
                     CreationDate = new DateTime(2017,10,22,13,00,0),

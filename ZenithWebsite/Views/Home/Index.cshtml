@@ -1,5 +1,43 @@
-﻿@{
+﻿@using ZenithWebSite.Controllers;
+@model List<HomeController.DayInfo>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<h1>Home Page</h1>
+<div class="jumbotron">
+    <h1>Zenith Society</h1>
+    <hr />
+    <p>The Zenith Society is a family oriented non-for-profit organization that holds events during the week.</p>
+</div>
+
+<h4>Schedule for Active Events</h4>
+<table class="table">
+    <!-- loop through Days and Events passed as WeeklyInfo from HomeController -->
+    @foreach (var day in Model)
+    {
+        DateTime date = day.Day;
+        <tr>
+            <th colspan="2" class="text-center label-success">
+                @date.ToLongDateString()
+            </th>
+        </tr>
+        foreach (var ev in day.Events)
+        {
+            DateTime startTimeRaw = DateTime.Parse(ev.StartDate.ToString());
+            DateTime endTimeRaw = DateTime.Parse(ev.EndDate.ToString());
+
+            string startTime = startTimeRaw.ToString("hh:mm:tt");
+            string endTime = endTimeRaw.ToString("hh:mm:tt");
+            string description = ev.ActivityDescription;
+            <tr>
+                <td>
+                    @startTime - @endTime
+                </td>
+                <td>
+                    @description
+                </td>
+            </tr>
+        }
+    }
+</table>
