@@ -28,7 +28,7 @@ namespace ZenithWebsite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Include(a => a.Activity).SingleOrDefault(a => a.EventId == id);
+            Event @event = db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
