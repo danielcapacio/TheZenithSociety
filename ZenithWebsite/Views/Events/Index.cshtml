@@ -34,7 +34,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td class="eventDescriptionWrap">
+        <td title="@Html.DisplayFor(modelItem => item.Activity.ActivityDescription)" class="eventDescriptionWrap">
             @Html.DisplayFor(modelItem => item.Activity.ActivityDescription)
         </td>
         <td>
