@@ -28,7 +28,7 @@ namespace ZenithWebsite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = db.Events.Include(a => a.Activity).SingleOrDefault(a => a.EventId == id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -49,6 +49,10 @@ namespace ZenithWebsite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EventId,StartDate,EndDate,EnteredBy,CreationDate,IsActive,ActivityCategoryId")] Event @event)
         {
+            // For logging & auditing purposes, Username and CreationDate will be saved with every event.
+            @event.EnteredBy = User.Identity.Name;
+            @event.CreationDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 db.Events.Add(@event);
