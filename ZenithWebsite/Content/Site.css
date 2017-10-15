@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.eventDescriptionWrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10px;
+}

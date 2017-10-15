@@ -18,7 +18,8 @@ namespace ZenithWebsite.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            var events = db.Events.Include(m => m.Activity);
+            return View(events.ToList());
         }
 
         // GET: Events/Details/5
@@ -39,6 +40,7 @@ namespace ZenithWebsite.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
+            ViewBag.ActivityCategoryId = new SelectList(db.Activities, "ActivityCategoryId", "ActivityDescription");
             return View();
         }
 
@@ -49,7 +51,7 @@ namespace ZenithWebsite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EventId,StartDate,EndDate,EnteredBy,CreationDate,IsActive,ActivityCategoryId")] Event @event)
         {
-            // For logging & auditing purposes, Username and CreationDate will be saved with every event.
+            // For logging &auditing purposes, Username and CreationDate will be saved with every event.
             @event.EnteredBy = User.Identity.Name;
             @event.CreationDate = DateTime.Now;
 
@@ -60,6 +62,7 @@ namespace ZenithWebsite.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ActivityCategoryId = new SelectList(db.Activities, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 
@@ -75,6 +78,7 @@ namespace ZenithWebsite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ActivityCategoryId = new SelectList(db.Activities, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 
@@ -91,6 +95,7 @@ namespace ZenithWebsite.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ActivityCategoryId = new SelectList(db.Activities, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 

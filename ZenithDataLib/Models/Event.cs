@@ -40,11 +40,9 @@ namespace ZenithDataLib.Models
         public bool IsActive { get; set; }
 
         // FK
-        // [ForeignKey("Activity")]
+        [ForeignKey("Activity")]
         [Display(Name = "Activity Category")]
         public int ActivityCategoryId { get; set; }
-
-        [Display(Name = "Activity Category")]
-        public Activity Activity;
+        public Activity Activity { get; set; }
     }
 }
