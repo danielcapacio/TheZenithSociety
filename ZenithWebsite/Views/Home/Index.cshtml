@@ -27,6 +27,10 @@
                 @date.ToLongDateString()
             </th>
         </tr>
+        <tr class="text-center label-default">
+            <th>Start Time - End Time</th>
+            <th>Activity Description</th>
+        </tr>
         foreach (var ev in day.Events)
         {
             DateTime startTimeRaw = DateTime.Parse(ev.StartDate.ToString());
@@ -36,12 +40,8 @@
             string endTime = endTimeRaw.ToString("hh:mm:tt");
             string description = ev.ActivityDescription;
             <tr>
-                <td>
-                    @startTime - @endTime
-                </td>
-                <td>
-                    @description
-                </td>
+                <td>@startTime - @endTime</td>
+                <td>@description</td>
             </tr>
         }
     }
