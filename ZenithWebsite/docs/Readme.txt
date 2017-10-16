@@ -1,19 +1,14 @@
-﻿Include a single readme.txt file with the following information:
-	- Your name(s), student number(s), and email address(es)
-    - What you have completed and what you have not completed
-    - The URL of your assignment 1 deployment on Azure.
-    - Any major challenges
-    - Place the readme.txt file inside a docs folder in your web application
+﻿2017-10-15
+COMP 4976 - ZenithSociety Assignment 1
 
------------------------------------------------------------------------------
-
-Nathan Miles
+Nathan Miles - A00966547 - Getryfp@gmail.com
 Daniel Capacio - A00961774 - danielcapacio@gmail.com
 
 Everything completed.
 
-URL
+http://zenithsociety-v1.azurewebsites.net/
 
 Major Challenges:
 	- Environment setup
 	- Displaying weekly date and activity information
+	- Deploying website to azure
